@@ -8,9 +8,9 @@ const Header: React.FC = () => {
      <Link href="/">Daily Contents</Link>
   </h3>
         <nav>
-          <ul className="flex space-x-6">
+          <ul className="flex space-x-8">
             <li className="hover:underline">
-              <Link href="/posts">Posts</Link>
+              <Link href="/posts">Posts </Link>
             </li>
             <li className="hover:underline">
               <Link href="/users">Users</Link>

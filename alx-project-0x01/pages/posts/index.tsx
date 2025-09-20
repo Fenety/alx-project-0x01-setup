@@ -10,4 +10,4 @@ const PostsPage: React.FC = () => {
     );
 };
 
-export default PostsPAge
+export default PostsPage
