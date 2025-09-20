@@ -1,3 +1,4 @@
+import React from "react";
 const Home: React.FC = () => {
   return (
     <div className="flex justify-center items-center h-screen">
@@ -6,4 +7,4 @@ const Home: React.FC = () => {
   )
 }
 
- export default Home;import React from "react";
+ export default Home;
