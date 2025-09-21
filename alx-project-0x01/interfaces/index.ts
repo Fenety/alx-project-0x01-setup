@@ -10,7 +10,7 @@ export interface PostsPageProps {
 }
 
 export interface UsersPageProps {
-  users: UserProps[];
+  posts: UserProps[];
 }
 
 export interface Geo {
