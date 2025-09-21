@@ -3,7 +3,8 @@ import UserCard from "@/components/common/UserCard";
 import { UserProps } from "@/interfaces";
 import { UsersPageProps } from "@/interfaces";
 import Header from "@/components/layout/Header";
-
+import PostCard from "@/components/common/PostCard"
+import { PostsPageProps } from "@/interfaces";
 
 const Users: React.FC<UsersPageProps> = ({ posts }) => {
 console.log(posts)
@@ -17,8 +18,8 @@ return (
             </div>
             <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3">
               {
-                posts?.map((post) => (
-                  <UserCard key={post.id} {...post} />
+                posts?.map((user) => (
+                  <UserCard key={user.id} {...user} />
                 ))
               }
             </div>
