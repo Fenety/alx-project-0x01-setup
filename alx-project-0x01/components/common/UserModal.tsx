@@ -1,9 +1,10 @@
 // components/common/UserModal.tsx
-import { UserData, UserModalProps } from "@/interfaces";
+import { UserProps, UserModalProps } from "@/interfaces";
 import React, { useState } from "react";
 
 const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
-  const [user, setUser] = useState<UserData>({
+  const [user, setUser] = useState<UserProps>({
+    id: 0, 
     name: "",
     username: "",
     email: "",
@@ -33,19 +34,19 @@ const UserModal: React.FC<UserModalProps> = ({ onClose, onSubmit }) => {
 
     // For nested objects like company.name or address.city
     if (name.startsWith("company.")) {
-      const key = name.split(".")[1] as keyof UserData["company"];
+      const key = name.split(".")[1] as keyof UserProps["company"];
       setUser((prev) => ({
         ...prev,
         company: { ...prev.company, [key]: value },
       }));
     } else if (name.startsWith("address.")) {
-      const key = name.split(".")[1] as keyof UserData["address"];
+      const key = name.split(".")[1] as keyof UserProps["address"];
       setUser((prev) => ({
         ...prev,
         address: { ...prev.address, [key]: value, geo: prev.address.geo },
       }));
     } else if (name.startsWith("geo.")) {
-      const key = name.split(".")[1] as keyof UserData["address"]["geo"];
+      const key = name.split(".")[1] as keyof UserProps["address"]["geo"];
       setUser((prev) => ({
         ...prev,
         address: {
